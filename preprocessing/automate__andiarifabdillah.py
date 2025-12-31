@@ -44,7 +44,7 @@ df_final = pd.DataFrame(X_train_scaled, columns=iris.feature_names)
 df_final['target'] = y_train.values
 
 # menyimpan hasil preprocessing
-output_path = 'iris_preprocessed.csv'
+output_path = 'iris_preprocessing.csv'
 df_final.to_csv(output_path, index=False)
 
 print(f"- Berhasil! Data bersih disimpan di: {output_path}")
