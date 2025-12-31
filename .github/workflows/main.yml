@@ -27,6 +27,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add preprocessing/iris_preprocessing.csv
-          git commit -m "Auto-update preprocessed data via GitHub Actions" || exit 0
+          git add iris_preprocessing.csv  # Menambahkan file yang muncul di log tadi
+          git commit -m "Auto-update preprocessing data" || echo "No changes to commit"
           git push
