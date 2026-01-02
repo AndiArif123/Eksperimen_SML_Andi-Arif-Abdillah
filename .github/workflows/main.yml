@@ -18,7 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas scikit-learn numpy
+          pip install pandas scikit-learn numpy joblib
 
       - name: Run Preprocessing Script
         run: python preprocessing/automate__andiarifabdillah.py
@@ -27,6 +27,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add iris_preprocessing.csv  # Menambahkan file yang muncul di log tadi
-          git commit -m "Auto-update preprocessing data" || echo "No changes to commit"
+          # Update git add untuk menyertakan file hasil dataset baru
+          git add iris_preprocessing.csv iris_test.csv scaler.pkl
+          git commit -m "Auto-update preprocessing data (Breast Cancer Dataset)" || echo "No changes to commit"
           git push
